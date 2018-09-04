@@ -1,0 +1,301 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random rnd = new Random();
+            int difficulty, i = 0, choise, answer;
+            
+            Console.WriteLine("Please choose what you difficulty you want to play (type the number:");
+            Console.WriteLine("1. Easy");
+            Console.WriteLine("2. Medium");
+            Console.WriteLine("3. Hard");
+            difficulty = int.Parse(Console.ReadLine());
+            Console.WriteLine("if you want to say 'Boom!' you need type 0");
+
+            switch (difficulty)
+            {
+                case 1:
+                    do
+                    {
+                      Console.WriteLine("Start the game by typing 1...");
+                      i = int.Parse(Console.ReadLine());
+                    } while (i != 1);
+
+                    for (i = 2; i != -1; i+=2)
+                    {
+                        if (i % 7 == 0 || i % 10 == 7 || i / 10 == 7)
+                        {
+                            choise = rnd.Next(1, 10);
+                            if (choise == 3)
+                            {
+                                Console.WriteLine(i);
+                                Console.WriteLine("Damn, i lost, YOU WIN!");
+                                i = -1;
+                            }
+                                
+                            else
+                                Console.WriteLine("Boom!");
+                        }
+                        else
+                        {
+                            Console.WriteLine(i);
+                        }
+
+                        // פלט
+                        if ((i+1) % 7 == 0 || (i+1) % 10 == 7 || (i+1) / 10 == 7)
+                        {
+                            answer = int.Parse(Console.ReadLine());
+                            if (answer != 0)
+                            {
+                                Console.WriteLine("You LOSE!, i fucking won!");
+                                i = -1;
+
+                            }
+                            if (answer == 0)
+                            {
+                                Console.SetCursorPosition(3, Console.CursorTop - 1);
+                                Console.WriteLine("Boom!");
+                            }
+                        }
+                        else
+                        {
+                            answer = int.Parse(Console.ReadLine());
+                                if (answer != (i + 1))
+                                {
+                                    Console.WriteLine("You LOSE!, i fucking won!");
+                                    i = -1;
+                                }
+                        }
+                        
+                        
+
+                    }
+                    break;
+                case 2:
+                    do
+                    {
+                        Console.WriteLine("Start the game by typing 1...");
+                        i = int.Parse(Console.ReadLine());
+                    } while (i != 1);
+
+                    for (i = 2; i != -1; i += 2)
+                    {
+                        if (i % 7 == 0 || i % 10 == 7 || i / 10 == 7)
+                        {
+                            choise = rnd.Next(1, 15);
+                            if (choise == 12)
+                            {
+                                Console.WriteLine(i);
+                                Console.WriteLine("Damn, i lost, YOU WIN!");
+                                i = -1;
+                            }
+
+                            else
+                                Console.WriteLine("Boom!");
+                        }
+                        else
+                        {
+                            Console.WriteLine(i);
+                        }
+
+                        // פלט
+                        if ((i + 1) % 7 == 0 || (i + 1) % 10 == 7 || (i + 1) / 10 == 7)
+                        {
+                            answer = int.Parse(Console.ReadLine());
+                            if (answer != 0)
+                            {
+                                Console.WriteLine("You LOSE!, i fucking won!");
+                                i = -1;
+
+                            }
+                            if (answer == 0)
+                            {
+                                Console.SetCursorPosition(3, Console.CursorTop - 1);
+                                Console.WriteLine("Boom!");
+                            }
+                        }
+                        else
+                        {
+                            answer = int.Parse(Console.ReadLine());
+                            if (answer != (i + 1))
+                            {
+                                Console.WriteLine("You LOSE!, i fucking won!");
+                                i = -1;
+                            }
+                        }
+
+
+
+                    }
+                    break;
+                case 3:
+                    // קלט
+                    do
+                    {
+                        Console.WriteLine("Start the game by typing 1...");
+                        i = int.Parse(Console.ReadLine());
+                    } while (i != 1);
+
+                    for (i = 2; i != -1; i += 2)
+                    {
+                        if (i >= 1 && i <= 9)
+                        {
+                            if (i % 7 == 0 || i % 10 == 7 || i / 10 == 7)
+                            {
+                                choise = rnd.Next(1, 20);
+                                if (choise == 9)
+                                {
+                                    Console.WriteLine(i);
+                                    Console.WriteLine("Damn, i lost, YOU WIN!");
+                                    i = -1;
+                                }
+
+                                else
+                                    Console.WriteLine("Boom!");
+                            }
+                            else
+                            {
+                                Console.WriteLine(i);
+                            }
+                        }
+                        if (i >= 10 && i <= 99)
+                        {
+                            if (i % 7 == 0 || i % 10 == 7 || i / 10 == 7)
+                            {
+                                choise = rnd.Next(1, 20);
+                                if (choise == 9)
+                                {
+                                    Console.WriteLine(i);
+                                    Console.WriteLine("Damn, i lost, YOU WIN!");
+                                    i = -1;
+                                }
+
+                                else
+                                    Console.WriteLine("Boom!");
+                            }
+                            else
+                            {
+                                Console.WriteLine(i);
+                            }
+                        }
+                        if (i >= 100 && i <= 999)
+                        {
+                            if (i % 7 == 0 || i % 10 == 7 || (i / 10) % 10 == 7 || i / 100 == 7)
+                            {
+                                choise = rnd.Next(1, 20);
+                                if (choise == 9)
+                                {
+                                    Console.WriteLine(i);
+                                    Console.WriteLine("Damn, i lost, YOU WIN!");
+                                    i = -1;
+                                }
+
+                                else
+                                    Console.WriteLine("Boom!");
+                            }
+                            else
+                            {
+                                Console.WriteLine(i);
+                            }
+                        }
+
+                        // פלט
+                        if (i >= 1 && i <= 10)
+                        {
+                            if ((i + 1) % 7 == 0 || (i + 1) % 10 == 7 || (i + 1) / 10 == 7)
+                            {
+                                answer = int.Parse(Console.ReadLine());
+                                if (answer != 0)
+                                {
+                                    Console.WriteLine("You LOSE!, i fucking won!");
+                                    i = -1;
+
+                                }
+                                if (answer == 0)
+                                {
+                                    Console.SetCursorPosition(3, Console.CursorTop - 1);
+                                    Console.WriteLine("Boom!");
+                                }
+                            }
+                            else
+                            {
+                                answer = int.Parse(Console.ReadLine());
+                                if (answer != (i + 1))
+                                {
+                                    Console.WriteLine("You LOSE!, i fucking won!");
+                                    i = -1;
+                                }
+                            }
+                        }
+                        if (i >= 10 && i <= 99)
+                        {
+                            if ((i + 1) % 7 == 0 || (i + 1) % 10 == 7 || (i + 1) / 10 == 7)
+                            {
+                                answer = int.Parse(Console.ReadLine());
+                                if (answer != 0)
+                                {
+                                    Console.WriteLine("You LOSE!, i fucking won!");
+                                    i = -1;
+
+                                }
+                                if (answer == 0)
+                                {
+                                    Console.SetCursorPosition(3, Console.CursorTop - 1);
+                                    Console.WriteLine("Boom!");
+                                }
+                            }
+                            else
+                            {
+                                answer = int.Parse(Console.ReadLine());
+                                if (answer != (i + 1))
+                                {
+                                    Console.WriteLine("You LOSE!, i fucking won!");
+                                    i = -1;
+                                }
+                            }
+                        }
+                        if (i >= 100 && i <= 999)
+                        {
+                            if (i % 7 == 0 || i % 10 == 7 || (i / 10) % 10 == 7 || i / 100 == 7)
+                            {
+                            answer = int.Parse(Console.ReadLine());
+                            if (answer != 0)
+                            {
+                                Console.WriteLine("You LOSE!, i fucking won!");
+                                i = -1;
+
+                            }
+                            if (answer == 0)
+                            {
+                                Console.SetCursorPosition(3, Console.CursorTop - 1);
+                                Console.WriteLine("Boom!");
+                            }
+                        }
+                        else
+                        {
+                            answer = int.Parse(Console.ReadLine());
+                            if (answer != (i + 1))
+                            {
+                                Console.WriteLine("You LOSE!, i fucking won!");
+                                i = -1;
+                            }
+                        }
+                        }
+                        
+
+
+
+                    }
+                    break;
+            }
+        }
+    }
+}
